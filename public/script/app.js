@@ -383,10 +383,8 @@ var spazioTrasformazione
 function spostamentoFigura(spazio, colore) {
     if (spazio.eat == true) {
         mangiarePedina.play()
-        console.log('bruh')
     } else {
         spostamentoPedina.play()
-        console.log('banana')
     }
     if (gameData[casellaCliccataMossa].tipoPedone == 'T') {
         if (torreBiancaDestraPrimaMossa == 0 && casellaCliccataMossa == 63) {

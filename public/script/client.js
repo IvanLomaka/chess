@@ -97,7 +97,6 @@ socket.on('changeNameWhite', (nomeRandom) => {
 
 socket.on('changeNameBlack', (nomeRandom) => {
     tempoPerMossaNero.textContent = nomeRandom
-    console.log(nomeRandom)
 })
 
 socket.on('changeName', (aName) => {
