@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.hide {
+    display: none;
+}
+
+.spostamento-caselle-bianco {
+    background-color: rgba(128, 128, 128);
+}
+
+.spostamento-caselle-blu {
+    background-color: rgba(94, 94, 94);
+}
+
+.spostamento-caselle-rosso {
+    background-color: tomato;
+}
+
+.casella-cliccata {
+    background-color: rgba(235, 220, 52);
+}
+
+.bianco {
+    background-color: #dedbd7;
+}
+
+.blu {
+    background-color: #544f69;
+}
+
+.nero {
+    background-color: #424242;
+}
+
+.rosso {
+    background-color: #ff442b;
+}
+
+.giallo {
+    background-color: #fff8d4;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.sinistra {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.not-active {
+    background-color: tomato;
+}
+
+.fake-casella {
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    width: 60px;
+}
+
+.column .row div {
+    height: 60px;
+    width: 60px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.column .row div img {
+    height: 60px;
+    width: 60px;
+}
+
+.image-casella {
+    width: 60px;
+    height: 60px;
+}
+
+.columnn {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+#pagina-principale {
+    background-image: url(../images/chessBackground.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.opzionii {
+    width: 400px;
+    margin: 20px;
+    height: 40px;
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    /*color: white;*/
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    text-transform: uppercase;
+}
+
+.opzionii:hover {
+    color: white;
+}
+
+#logo {
+    font-size: 60px;
+    padding: 20px;
+    transition: all 1s ease-in-out;
+}
+
+#logo:hover {
+    color: white;
+}
+
+.active {
+    background-color: #1cfc2b;
+}
+
+.opzionii button {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    font-size: 30px;
+    transition: all ease-in-out 0.5s;
+    user-select: none;
+    outline: none;
+    width: 200px;
+    box-shadow: 5px 7px 8px #4b4b4b;
+    cursor: pointer;
+}
+
+#opzioni {
+    background-image: url(../images/chessBackground.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    color: white;
+}
+
+.centro {
+    padding-left: 20px;
+    width: 540px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.row button {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    font-size: 15px;
+    transition: all ease-in-out 0.5s;
+    user-select: none;
+    outline: none;
+    width: 180px;
+    box-shadow: 5px 7px 8px #4b4b4b;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    padding: 10px;
+}
+
+.div270 {
+    height: 270px;
+}
+
+#scacchiera {
+    background-image: url(../images/chessBackground.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    color: white;
+}
+
+.tempo-rimanente {
+    height: 40px;
+}
+
+.cento {
+    width: 100%;
+}
+
+.statistiche-partita {
+    text-align: left;
+    width: 270px;
+    font-size: 20px;
+}
+
+.roww {
+    display: flex;
+    flex-direction: row;
+}
+
+.box {
+    height: 40px;
+    width: 60px;
+    background-color: rgb(177, 177, 177);
+    border: gray 1px solid;
+}
+
+.tempo-restante {
+    padding: 5px;
+    font-size: 20px;
+}
+
+#opzioni-scacchi {
+    background-image: url(../images/chessBackground.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+#immissione-codice {
+    background-image: url(../images/chessBackground.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.opzioniii button {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    font-size: 30px;
+    transition: all ease-in-out 0.5s;
+    user-select: none;
+    outline: none;
+    width: 300px;
+    box-shadow: 5px 7px 8px #4b4b4b;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+#input-immesso {
+    width: 300px;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 15px;
+    margin: 5px;
+    outline: none;
+}
+
+#codice-partita {
+    user-select: auto;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black; 
+    box-shadow: 5px 7px 8px #4b4b4b;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #ffc558;
+    width: 120px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal img {
+    width: 120px;
+    height: 120px;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .title {
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px; 
+}
+
+.close-button {
+    font-size: 25px;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-body button {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    font-size: 20px;
+    transition: all ease-in-out 0.5s;
+    user-select: none;
+    outline: none;
+    width: 350px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* chat */
+
+.chat-container {
+	max-width: 1100px;
+	background: #fff;
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+.chat-header {
+	background: var(--dark-color-a);
+	color: #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.chat-main {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.chat-sidebar {
+	background: var(--dark-color-b);
+	color: #fff;
+	padding: 20px 20px 60px;
+	overflow-y: scroll;
+}
+
+.chat-sidebar h2 {
+	font-size: 20px;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.chat-sidebar h3 {
+	margin-bottom: 15px;
+}
+
+.chat-sidebar ul li {
+	padding: 10px 0;
+}
+
+.chat-messages {
+	padding: 30px;
+	height: 440px;
+	overflow-y: scroll;
+    background-color: rgba(107, 107, 107, 0.7);
+}
+
+.chat-messages .message {
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: #544f69;
+	border-radius: 5px;
+    text-align: left;
+}
+
+.chat-messages .message .meta {
+	font-size: 15px;
+	font-weight: bold;
+	color: rgb(216, 216, 216);
+	opacity: 0.7;
+	margin-bottom: 7px;
+}
+
+.chat-messages .message .meta span {
+	color: rgb(143, 143, 143);
+}
+
+.chat-form-container {
+	padding: 20px 30px;
+    background-color: rgba(107, 107, 107, 0.7);
+}
+
+.chat-form-container form {
+	display: flex;
+}
+
+.chat-form-container input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	flex: 1;
+}
+
+.titolo-bot h1 {
+    font-size: 60px;
+}
+
+.statss {
+    font-size: 20px;
+}
+
+#indietro-schermata-principale {
+    bottom: 6px;
+    left: 6px;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+}
+
+.opzioni-bot button {
+    width: 80px;
+}
