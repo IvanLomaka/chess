@@ -17,12 +17,31 @@ app.use(express.static(path.join(__dirname, 'public')))
 // creo il bot
 
 const nomeBot = 'Assistant'
+const creator = 'Lomaka Ivan'
 
 // creo le stanze
 
 let stanze = {}
 
 let nomi = {}
+
+// array insulti
+
+const insultiArray = [
+    'Il tuo cervello è come l\'isola di piter pan ... non c\'è <3',
+    'Ti informo che da oggi puoi comprare a soli 18 euro il kit d\'espansione del tuo cervello. Prova anche tu il piacere di formulare frasi e pensieri corretti.',
+    'Sei utile come la forchetta per mangiare il brodo.',
+    'Sei bella come il sole. Inguardabile.',
+    'Se il lunedì fosse una persona, quella persona saresti tu.'
+]
+
+const insultArray = [
+    'Your brain is like peter pan\'s island ... there is no <3',
+    'I inform you that from today you can buy your brain expansion kit for only 18 euros. Feel the pleasure of formulating correct sentences and thoughts.',
+    'You are as useful as the fork for eating broth.',
+    'You are beautiful as the sun. Unwatchable.',
+    'If Monday was a person, that person would be you.'
+]
 
 io.on('connection', client => {
     console.log('Connessione!')
@@ -112,17 +131,28 @@ io.on('connection', client => {
                 client.broadcast.to(stanze[client.id]).emit('message', formatoMessaggio(nomeBot, `${nomi[client.id]} has left the game!`))
                 stanze[client.id] = undefined
                 client.emit('resetPagina')
-                break;
+                break
             case '/help':
-                client.emit('message', formatoMessaggio(nomeBot, `Commands: /help, /leave, /clear.`))
-                break;
+                client.emit('message', formatoMessaggio(nomeBot, `Commands: /help, /leave, /clear. <br>There are more secret commands that are waiting to be discovered`))
+                break
             case '/clear':
                 client.emit('clearMessageBox')
-                break;
+                break
+            case '/insult':
+                let insultRandomNumber = Math.floor(Math.random() * insultArray.length)
+                io.to(stanze[client.id]).emit('message', formatoMessaggio(creator, `From ${nomi[client.id]}<br>${insultArray[insultRandomNumber]}`))
+                break
+            case '/insulto':
+                let insultiRandomNumber = Math.floor(Math.random() * insultiArray.length)
+                io.to(stanze[client.id]).emit('message', formatoMessaggio(creator, `Da ${nomi[client.id]}<br>${insultiArray[insultiRandomNumber]}`))
+                break
+            case '/creator':
+                io.to(stanze[client.id]).emit('message', formatoMessaggio(creator, `Hey I'm Lomaka Ivan and I'm the creator of this website!<br>Check out my github projects<br>https://github.com/IvanLomaka/`))
+                break
             case '/hacks':
-                client.emit('message', formatoMessaggio(nomeBot, `Commands: /hacks, /caos, /win.`))
-                break;
-            case '/caos':
+                client.emit('message', formatoMessaggio(nomeBot, `Commands: !hacks, !madness, !letmewin.`))
+                break
+            case '/madness':
                 let randomNumber = Math.floor(Math.random() * 2) + 1
                 io.to(stanze[client.id]).emit('message', formatoMessaggio(nomeBot, `Caos enabled`))
                 if (randomNumber == 2) {
@@ -132,12 +162,12 @@ io.on('connection', client => {
                     client.emit('message', formatoMessaggio(nomeBot, 'Now your opponet will do random moves!'))
                     client.broadcast.to(stanze[client.id]).emit('MODENOTDEFINED', 1)
                 }
-                break;
-            case '/win':
+                break
+            case '/letmewin':
                 client.emit('richiestacolore')
-                break;
+                break
             default:
-                break;
+                break
         }
     }
 
