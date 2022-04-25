@@ -133,7 +133,7 @@ io.on('connection', client => {
                 client.emit('resetPagina')
                 break
             case '/help':
-                client.emit('message', formatoMessaggio(nomeBot, `Commands: /help, /leave, /clear. <br>There are more secret commands that are waiting to be discovered`))
+                client.emit('message', formatoMessaggio(nomeBot, `Commands: /help, /leave, /clear, /creator. <br>There are more secret commands that are waiting to be discovered`))
                 break
             case '/clear':
                 client.emit('clearMessageBox')
