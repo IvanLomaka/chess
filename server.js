@@ -193,7 +193,7 @@ io.on('connection', client => {
     }
 
     function nuovaPartita() {
-        let nomeStanza = randomString(5)
+        let nomeStanza = randomString(3)
         stanze[client.id] = nomeStanza
         client.emit('gameCode', nomeStanza)
         client.join(nomeStanza)
