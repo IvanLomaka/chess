@@ -1,0 +1,16 @@
+services:
+  # A web service for the chess multiplayer game
+  - type: web
+    name: chess-multiplayer
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+    autoDeploy: true
+    # Health check to ensure the application is running properly
+    healthCheckPath: /
