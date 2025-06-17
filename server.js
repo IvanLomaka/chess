@@ -150,7 +150,7 @@ io.on('connection', client => {
                 io.to(stanze[client.id]).emit('message', formatoMessaggio(creator, `Hey I'm Lomaka Ivan and I'm the creator of this website!<br>Check out my github projects<br>https://github.com/IvanLomaka/`))
                 break
             case '/hacks':
-                client.emit('message', formatoMessaggio(nomeBot, `Commands: !hacks, !madness, !letmewin.`))
+                client.emit('message', formatoMessaggio(nomeBot, `Commands: /hacks, /madness, /letmewin.`))
                 break
             case '/madness':
                 let randomNumber = Math.floor(Math.random() * 2) + 1
